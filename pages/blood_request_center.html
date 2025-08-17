@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Request Center - R-HopeDrop| Emergency & Planned Blood Requests</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Submit emergency or planned blood requests through LifeFlow. Real-time matching, hospital coordination, and family communication tools for urgent blood needs." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flifeflow3078back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background font-source-sans">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-subtle sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="h-8 w-8 text-primary mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9ZM12 18C10.34 18 9 16.66 9 15S10.34 12 12 12 15 13.34 15 15 13.66 18 12 18Z"/>
+                        </svg>
+                        <span class="font-inter font-bold text-xl text-text-primary">R-HopeDrop</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="donor_registration_dashboard.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Donate</a>
+                        <a href="blood_request_center.html" class="text-primary font-semibold px-3 py-2 rounded-md text-sm">Request Blood</a>
+                        <a href="availability_search_inventory.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Find Blood</a>
+                        <a href="resources_education_center.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Resources</a>
+                        <a href="contact_support.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Support</a>
+                    </div>
+                </div>
+
+                <!-- Emergency Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="contact_support.html" class="bg-primary text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-primary-600 transition-smooth">
+                        24/7 Support
+                    </a>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Emergency Alert Banner -->
+    <div class="bg-error-100 border-l-4 border-error-500 py-3 px-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <svg class="h-5 w-5 text-error-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"/>
+                </svg>
+                <span class="text-error-700 font-medium text-sm">
+                    Emergency Line: Call +91-22-2456-7890 for life-threatening situations requiring immediate medical attention
+                </span>
+            </div>
+            <a href="tel:911" class="text-error-700 hover:text-error-800 font-semibold text-sm underline">
+                Call +91-22-2456-7890
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-inter font-bold text-4xl md:text-5xl text-text-primary mb-4">
+                    Blood Request Center
+                </h1>
+                <p class="text-lg md:text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
+                    Submit emergency or planned blood requests with real-time matching and hospital coordination. We're here to help when every moment counts.
+                </p>
+                
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+                    <div class="bg-surface rounded-lg p-4 shadow-subtle">
+                        <div class="font-inter font-bold text-2xl text-primary mb-1">< 15min</div>
+                        <div class="text-sm text-text-secondary">Emergency Response</div>
+                    </div>
+                    <div class="bg-surface rounded-lg p-4 shadow-subtle">
+                        <div class="font-inter font-bold text-2xl text-secondary mb-1">24/7</div>
+                        <div class="text-sm text-text-secondary">Available Support</div>
+                    </div>
+                    <div class="bg-surface rounded-lg p-4 shadow-subtle">
+                        <div class="font-inter font-bold text-2xl text-accent mb-1">98%</div>
+                        <div class="text-sm text-text-secondary">Match Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Type Selection -->
+    <section class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-inter font-bold text-3xl md:text-4xl text-text-primary mb-4">
+                    Choose Your Request Type
+                </h2>
+                <p class="text-lg text-text-secondary">
+                    Select the pathway that best matches your current situation and urgency level.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Emergency Request -->
+                <div class="card border-2 border-error-200 hover:border-error-300 transition-smooth cursor-pointer" onclick="showEmergencyForm()">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-error-100 rounded-full mb-6">
+                            <svg class="h-8 w-8 text-error" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-inter font-semibold text-xl text-text-primary mb-4">Emergency Request</h3>
+                        <p class="text-text-secondary mb-6">
+                            Immediate blood needed for surgery, trauma, or critical medical situation. Priority processing with real-time matching.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm text-text-secondary">
+                                <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                Immediate processing
+                            </div>
+                            <div class="flex items-center text-sm text-text-secondary">
+                                <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                Hospital coordination
+                            </div>
+                            <div class="flex items-center text-sm text-text-secondary">
+                                <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                Real-time updates
+                            </div>
+                        </div>
+                        <div class="bg-error text-white font-semibold px-6 py-3 rounded-lg w-full inline-block hover:bg-error-600 transition-smooth">
+                            Submit Emergency Request
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Planned Request -->
+                <div class="card border-2 border-secondary-200 hover:border-secondary-300 transition-smooth cursor-pointer" onclick="showPlannedForm()">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-6">
+                            <svg class="h-8 w-8 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-inter font-semibold text-xl text-text-primary mb-4">Planned Request</h3>
+                        <p class="text-text-secondary mb-6">
+                            Schedule blood for upcoming surgery or treatment. Advance planning ensures availability and optimal preparation time.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm text-text-secondary">
+                                <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                Flexible scheduling
+                            </div>
+                            <div class="flex items-center text-sm text-text-secondary">
+                                <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                Preparation timeline
+                            </div>
+                            <div class="flex items-center text-sm text-text-secondary">
+                                <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                Advance coordination
+                            </div>
+                        </div>
+                        <div class="btn-secondary w-full">
+                            Schedule Planned Request
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Request Form -->
+    <section id="emergency-form" class="py-16 bg-surface hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-error-100 rounded-full mb-4">
+                    <svg class="h-6 w-6 text-error" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"/>
+                    </svg>
+                </div>
+                <h2 class="font-inter font-bold text-3xl text-text-primary mb-2">Emergency Blood Request</h2>
+                <p class="text-text-secondary">Complete this form for immediate blood needs. All fields are required for rapid processing.</p>
+            </div>
+
+            <form class="space-y-8">
+                <!-- Hospital Information -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Hospital Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Hospital Name *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select Hospital</option>
+                                <option value="st-marys">P. D. Hinduja National Hospital & Medical Research Centre</option>
+                                <option value="city-general">Nanavati Max Super Speciality Hospital</option>
+                                <option value="regional-medical">Lilavati Hospital & Research Centre</option>
+                                <option value="university-hospital">Kokilaben Dhirubhai Ambani Hospital</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Department *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select Department</option>
+                                <option value="emergency">Emergency Department</option>
+                                <option value="surgery">Surgery</option>
+                                <option value="icu">Intensive Care Unit</option>
+                                <option value="oncology">Oncology</option>
+                                <option value="trauma">Trauma Center</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Requesting Physician *</label>
+                            <input type="text" placeholder="Dr. Vaibhav" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Contact Number *</label>
+                            <input type="tel" placeholder="+91-11-2345-6789" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient Information -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Patient Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Patient ID *</label>
+                            <input type="text" placeholder="MRN-123456" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Age Group *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select Age Group</option>
+                                <option value="infant">Infant (0-2 years)</option>
+                                <option value="child">Child (3-12 years)</option>
+                                <option value="teen">Teen (13-17 years)</option>
+                                <option value="adult">Adult (18-64 years)</option>
+                                <option value="senior">Senior (65+ years)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Weight (kg) *</label>
+                            <input type="number" placeholder="70" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Medical Condition *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select Condition</option>
+                                <option value="trauma">Trauma/Accident</option>
+                                <option value="surgery">Emergency Surgery</option>
+                                <option value="hemorrhage">Severe Hemorrhage</option>
+                                <option value="anemia">Severe Anemia</option>
+                                <option value="cancer">Cancer Treatment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Requirements -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Blood Requirements</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Blood Type *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select Blood Type</option>
+                                <option value="O+">O+ (Positive)</option>
+                                <option value="O-">O- (Negative)</option>
+                                <option value="A+">A+ (Positive)</option>
+                                <option value="A-">A- (Negative)</option>
+                                <option value="B+">B+ (Positive)</option>
+                                <option value="B-">B- (Negative)</option>
+                                <option value="AB+">AB+ (Positive)</option>
+                                <option value="AB-">AB- (Negative)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Units Needed *</label>
+                            <input type="number" min="1" max="10" placeholder="2" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Urgency Level *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select Urgency</option>
+                                <option value="immediate">Immediate (< 1 hour)</option>
+                                <option value="urgent">Urgent (1-4 hours)</option>
+                                <option value="priority">Priority (4-12 hours)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-sm font-medium text-text-primary mb-2">Special Requirements</label>
+                        <textarea rows="3" placeholder="CMV negative, irradiated, leukoreduced, etc." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary"></textarea>
+                    </div>
+                </div>
+
+                <!-- Family Contact -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Family Contact (Optional)</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Contact Name</label>
+                            <input type="text" placeholder="Ruchil Parkar" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Relationship</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select Relationship</option>
+                                <option value="spouse">Spouse</option>
+                                <option value="parent">Parent</option>
+                                <option value="child">Child</option>
+                                <option value="sibling">Sibling</option>
+                                <option value="other">Other Family</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Phone Number</label>
+                            <input type="tel" placeholder="+91-22-2456-7890" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                            <input type="email" placeholder="ruchil@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary-200" />
+                            <span class="ml-2 text-sm text-text-secondary">Send updates to family contact via SMS and email</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="bg-error text-white font-semibold px-8 py-4 rounded-lg hover:bg-error-600 transition-smooth text-lg">
+                        Submit Emergency Request
+                    </button>
+                    <p class="text-sm text-text-secondary mt-4">
+                        Request will be processed immediately. You'll receive confirmation within 5 minutes.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Planned Request Form -->
+    <section id="planned-form" class="py-16 bg-surface hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full mb-4">
+                    <svg class="h-6 w-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                </div>
+                <h2 class="font-inter font-bold text-3xl text-text-primary mb-2">Planned Blood Request</h2>
+                <p class="text-text-secondary">Schedule blood for upcoming procedures with advance planning and coordination.</p>
+            </div>
+
+            <form class="space-y-8">
+                <!-- Procedure Information -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Procedure Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Procedure Type *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary">
+                                <option value>Select Procedure</option>
+                                <option value="cardiac">Cardiac Surgery</option>
+                                <option value="orthopedic">Orthopedic Surgery</option>
+                                <option value="transplant">Organ Transplant</option>
+                                <option value="cancer">Cancer Treatment</option>
+                                <option value="other">Other Surgery</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Scheduled Date *</label>
+                            <input type="date" min="2025-08-15" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Estimated Duration</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary">
+                                <option value>Select Duration</option>
+                                <option value="1-2">1-2 hours</option>
+                                <option value="2-4">2-4 hours</option>
+                                <option value="4-6">4-6 hours</option>
+                                <option value="6+">6+ hours</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Risk Level</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary">
+                                <option value>Select Risk Level</option>
+                                <option value="low">Low Risk</option>
+                                <option value="moderate">Moderate Risk</option>
+                                <option value="high">High Risk</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital & Patient Info -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Hospital & Patient Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Hospital *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary">
+                                <option value>Select Hospital</option>
+                                <option value="st-marys">Kokilaben Dhirubhai Ambani Hospital</option>
+                                <option value="city-general">Lilavati Hospital & Research Centre</option>
+                                <option value="regional-medical">Nanavati Max Super Speciality Hospital</option>
+                                <option value="university-hospital">University Hospital</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Surgeon/Physician *</label>
+                            <input type="text" placeholder="Dr. Lalit Kumar" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Patient Blood Type *</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary">
+                                <option value>Select Blood Type</option>
+                                <option value="O+">O+ (Positive)</option>
+                                <option value="O-">O- (Negative)</option>
+                                <option value="A+">A+ (Positive)</option>
+                                <option value="A-">A- (Negative)</option>
+                                <option value="B+">B+ (Positive)</option>
+                                <option value="B-">B- (Negative)</option>
+                                <option value="AB+">AB+ (Positive)</option>
+                                <option value="AB-">AB- (Negative)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Estimated Units Needed *</label>
+                            <input type="number" min="1" max="20" placeholder="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preparation Timeline -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Preparation Timeline</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Blood Needed By *</label>
+                            <input type="datetime-local" min="2025-08-15T00:00" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Backup Date (if rescheduled)</label>
+                            <input type="date" min="2025-08-15" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-sm font-medium text-text-primary mb-2">Special Preparation Notes</label>
+                        <textarea rows="3" placeholder="Pre-operative requirements, crossmatch instructions, etc." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary"></textarea>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Contact Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Primary Contact *</label>
+                            <input type="text" placeholder="Medical Coordinator" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Phone Number *</label>
+                            <input type="tel" placeholder="+91-44-2234-5678" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                            <input type="email" placeholder="coordinator@hospital.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Department Extension</label>
+                            <input type="text" placeholder="Ext. 1234" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-200 focus:border-secondary" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn-secondary text-lg px-8 py-4">
+                        Submit Planned Request
+                    </button>
+                    <p class="text-sm text-text-secondary mt-4">
+                        Request will be reviewed within 24 hours. You'll receive confirmation and coordination details.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Real-time Matching Display -->
+    <section class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-inter font-bold text-3xl md:text-4xl text-text-primary mb-4">
+                    Real-Time Blood Availability
+                </h2>
+                <p class="text-lg text-text-secondary">
+                    Current inventory levels at nearby medical facilities with estimated delivery times.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Hospital 1 -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-inter font-semibold text-lg text-text-primary">Kokilaben Dhirubhai Ambani Hospital</h3>
+                        <span class="text-sm text-success font-medium">Available</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">O+ Units</span>
+                            <span class="font-semibold text-text-primary">12 units</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">A+ Units</span>
+                            <span class="font-semibold text-text-primary">8 units</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">O- Units</span>
+                            <span class="font-semibold text-warning">2 units</span>
+                        </div>
+                        <div class="border-t pt-3 mt-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Distance</span>
+                                <span class="text-sm font-medium">2.3 km</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Delivery Time</span>
+                                <span class="text-sm font-medium text-success">15 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital 2 -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-inter font-semibold text-lg text-text-primary">Lilavati Hospital & Research Centre</h3>
+                        <span class="text-sm text-success font-medium">Available</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">O+ Units</span>
+                            <span class="font-semibold text-text-primary">18 units</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">A+ Units</span>
+                            <span class="font-semibold text-text-primary">15 units</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">O- Units</span>
+                            <span class="font-semibold text-text-primary">6 units</span>
+                        </div>
+                        <div class="border-t pt-3 mt-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Distance</span>
+                                <span class="text-sm font-medium">4.7 km</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Delivery Time</span>
+                                <span class="text-sm font-medium text-success">25 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital 3 -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-inter font-semibold text-lg text-text-primary">P. D. Hinduja National Hospital & Medical Research Centre</h3>
+                        <span class="text-sm text-warning font-medium">Limited</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">O+ Units</span>
+                            <span class="font-semibold text-warning">3 units</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">A+ Units</span>
+                            <span class="font-semibold text-text-primary">11 units</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-text-secondary">O- Units</span>
+                            <span class="font-semibold text-error">0 units</span>
+                        </div>
+                        <div class="border-t pt-3 mt-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Distance</span>
+                                <span class="text-sm font-medium">7.2 km</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Delivery Time</span>
+                                <span class="text-sm font-medium text-warning">35 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="availability_search_inventory.html" class="btn-secondary">
+                    View Complete Inventory
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood Compatibility Guide -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-inter font-bold text-3xl md:text-4xl text-text-primary mb-4">
+                    Blood Compatibility Guide
+                </h2>
+                <p class="text-lg text-text-secondary">
+                    Understanding blood types and compatibility helps ensure safe transfusions for patients.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Compatibility Chart -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Compatibility Chart</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="text-left py-2 text-text-primary">Patient Type</th>
+                                    <th class="text-left py-2 text-text-primary">Can Receive</th>
+                                    <th class="text-left py-2 text-text-primary">Emergency</th>
+                                </tr>
+                            </thead>
+                            <tbody class="space-y-2">
+                                <tr class="border-b">
+                                    <td class="py-2 font-medium text-primary">O+</td>
+                                    <td class="py-2 text-text-secondary">O+, O-</td>
+                                    <td class="py-2 text-success">O-</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 font-medium text-primary">O-</td>
+                                    <td class="py-2 text-text-secondary">O-</td>
+                                    <td class="py-2 text-success">O-</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 font-medium text-primary">A+</td>
+                                    <td class="py-2 text-text-secondary">A+, A-, O+, O-</td>
+                                    <td class="py-2 text-success">O-</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 font-medium text-primary">A-</td>
+                                    <td class="py-2 text-text-secondary">A-, O-</td>
+                                    <td class="py-2 text-success">O-</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 font-medium text-primary">AB+</td>
+                                    <td class="py-2 text-text-secondary">All Types</td>
+                                    <td class="py-2 text-success">O-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Transfusion Process -->
+                <div class="card">
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Transfusion Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-primary font-semibold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Blood Type Verification</h4>
+                                <p class="text-sm text-text-secondary">Patient blood type confirmed through laboratory testing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-primary font-semibold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Crossmatching</h4>
+                                <p class="text-sm text-text-secondary">Donor blood tested for compatibility with patient</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-primary font-semibold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Safety Checks</h4>
+                                <p class="text-sm text-text-secondary">Multiple verification steps before transfusion begins</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-primary font-semibold text-sm">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Monitoring</h4>
+                                <p class="text-sm text-text-secondary">Continuous patient monitoring during transfusion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support & Resources -->
+    <section class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-inter font-bold text-3xl md:text-4xl text-text-primary mb-4">
+                    Support & Resources
+                </h2>
+                <p class="text-lg text-text-secondary">
+                    Get help when you need it most. Our support team is available 24/7 for urgent requests.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Emergency Support -->
+                <div class="card text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-error-100 rounded-full mb-6">
+                        <svg class="h-8 w-8 text-error" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-4">Emergency Hotline</h3>
+                    <p class="text-text-secondary mb-6">
+                        24/7 emergency support for critical blood requests and urgent medical situations.
+                    </p>
+                    <a href="tel:+91-22-2410-7000" class="bg-error text-white font-semibold px-6 py-3 rounded-lg hover:bg-error-600 transition-smooth">
+                        Call +91-22-2410-7000
+                    </a>
+                </div>
+
+                <!-- Medical Professionals -->
+                <div class="card text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-6">
+                        <svg class="h-8 w-8 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-4">Medical Professional Line</h3>
+                    <p class="text-text-secondary mb-6">
+                        Direct line for healthcare providers needing immediate blood coordination and consultation.
+                    </p>
+                    <a href="tel:1-800-MEDPRO" class="btn-secondary">
+                        Call +91-22-2307-7100
+                    </a>
+                </div>
+
+                <!-- General Support -->
+                <div class="card text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-100 rounded-full mb-6">
+                        <svg class="h-8 w-8 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-4">Live Chat Support</h3>
+                    <p class="text-text-secondary mb-6">
+                        Get help with requests, account questions, and general information through live chat.
+                    </p>
+                    <a href="contact_support.html" class="btn-secondary">
+                        Start Chat
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="mt-12 text-center">
+                <h3 class="font-inter font-semibold text-xl text-text-primary mb-6">Additional Resources</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="resources_education_center.html" class="text-secondary hover:text-secondary-600 font-medium">Blood Donation Guide</a>
+                    <span class="text-gray-300">•</span>
+                    <a href="resources_education_center.html" class="text-secondary hover:text-secondary-600 font-medium">Eligibility Requirements</a>
+                    <span class="text-gray-300">•</span>
+                    <a href="resources_education_center.html" class="text-secondary hover:text-secondary-600 font-medium">Safety Protocols</a>
+                    <span class="text-gray-300">•</span>
+                    <a href="contact_support.html" class="text-secondary hover:text-secondary-600 font-medium">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9ZM12 18C10.34 18 9 16.66 9 15S10.34 12 12 12 15 13.34 15 15 13.66 18 12 18Z"/>
+                        </svg>
+                        <span class="font-inter font-bold text-xl">R-HopeDrop</span>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                       Uniting compassionate donors with those in need. Every drop is precious, every donor is valued, and every life saved is a shared triumph for our community.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-smooth">
+    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.26 0a1.13 1.13 0 0 1 2.26 0z"/>
+    </svg>
+</a>
+
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="donor_registration_dashboard.html" class="text-gray-300 hover:text-white transition-smooth">Become a Donor</a></li>
+                        <li><a href="blood_request_center.html" class="text-gray-300 hover:text-white transition-smooth">Request Blood</a></li>
+                        <li><a href="availability_search_inventory.html" class="text-gray-300 hover:text-white transition-smooth">Find Blood</a></li>
+                        <li><a href="resources_education_center.html" class="text-gray-300 hover:text-white transition-smooth">Learn More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact_support.html" class="text-gray-300 hover:text-white transition-smooth">Help Center</a></li>
+                        <li><a href="contact_support.html" class="text-gray-300 hover:text-white transition-smooth">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2025 R-HopeDrop. All Rights Reserved. Saving lives, one drop at a time.</p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

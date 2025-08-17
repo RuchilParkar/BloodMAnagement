@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Blood & Donation Centers - R-HopeDrop</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Find blood availability and donation centers near you. Real-time inventory tracking with location-based search and predictive analytics." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flifeflow3078back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background font-source-sans">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-subtle sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="h-8 w-8 text-primary mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9ZM12 18C10.34 18 9 16.66 9 15S10.34 12 12 12 15 13.34 15 15 13.66 18 12 18Z"/>
+                        </svg>
+                        <span class="font-inter font-bold text-xl text-text-primary">R-HopeDrop</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="donor_registration_dashboard.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Donate</a>
+                        <a href="blood_request_center.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Request Blood</a>
+                        <a href="availability_search_inventory.html" class="text-primary font-semibold px-3 py-2 rounded-md text-sm">Find Blood</a>
+                        <a href="resources_education_center.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Resources</a>
+                        <a href="contact_support.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Support</a>
+                    </div>
+                </div>
+
+                <!-- Emergency Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="blood_request_center.html" class="bg-primary text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-primary-600 transition-smooth">
+                        Emergency Request
+                    </a>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Critical Shortage Alert -->
+    <div class="bg-error-100 border-l-4 border-error-500 py-3 px-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <svg class="h-5 w-5 text-error-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"/>
+                </svg>
+                <span class="text-error-700 font-medium text-sm">
+                    Critical Alert: O- blood critically low in your area (2 units available)
+                </span>
+            </div>
+            <a href="blood_request_center.html" class="text-error-700 hover:text-error-800 font-semibold text-sm underline">
+                Request Now →
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-secondary-50 to-primary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-inter font-bold text-4xl md:text-5xl text-text-primary mb-4">
+                    Find Blood & Donation Centers
+                </h1>
+                <p class="text-lg md:text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
+                    Access real-time blood inventory with advanced location-based search. Instantly discover nearby donation centers, check available blood types, and benefit from predictive analytics to ensure timely and life-saving support.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="py-8 bg-surface shadow-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Location Search -->
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1">
+                        <label for="location-search" class="block text-sm font-medium text-text-primary mb-2">
+                            Search Location
+                        </label>
+                        <div class="relative">
+                            <input type="text" id="location-search" placeholder="Enter zip code, city, or address" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                            <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="btn-secondary flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                            </svg>
+                            Use My Location
+                        </button>
+                        <button class="btn-primary">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+                            </svg>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Filters -->
+            <div class="grid md:grid-cols-4 gap-4 mb-6">
+                <div>
+                    <label for="blood-type" class="block text-sm font-medium text-text-primary mb-2">
+                        Blood Type
+                    </label>
+                    <select id="blood-type" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                        <option value>All Types</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="facility-type" class="block text-sm font-medium text-text-primary mb-2">
+                        Facility Type
+                    </label>
+                    <select id="facility-type" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                        <option value>All Facilities</option>
+                        <option value="blood-bank">Blood Banks</option>
+                        <option value="hospital">Hospitals</option>
+                        <option value="donation-center">Donation Centers</option>
+                        <option value="mobile-unit">Mobile Units</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="donation-type" class="block text-sm font-medium text-text-primary mb-2">
+                        Donation Type
+                    </label>
+                    <select id="donation-type" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                        <option value>All Types</option>
+                        <option value="whole-blood">Whole Blood</option>
+                        <option value="platelets">Platelets</option>
+                        <option value="plasma">Plasma</option>
+                        <option value="double-red">Double Red Cells</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="availability" class="block text-sm font-medium text-text-primary mb-2">
+                        Availability
+                    </label>
+                    <select id="availability" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                        <option value>Any Time</option>
+                        <option value="today">Available Today</option>
+                        <option value="this-week">This Week</option>
+                        <option value="appointments">Appointments Available</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filter Actions -->
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <button class="text-secondary hover:text-secondary-600 font-medium text-sm flex items-center">
+                        <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"/>
+                        </svg>
+                        Reset Filters
+                    </button>
+                    <span class="text-text-secondary text-sm">Showing results within 25 miles</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-text-secondary text-sm">View:</span>
+                    <button class="p-2 text-primary bg-primary-50 rounded-lg">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </button>
+                    <button class="p-2 text-text-secondary hover:text-primary rounded-lg">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Inventory Overview -->
+    <section class="py-8 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <h2 class="font-inter font-bold text-2xl text-text-primary mb-4">
+                    Current Blood Inventory - Your Area
+                </h2>
+                <p class="text-text-secondary mb-6">
+                    Real-time availability updated every 15 minutes. Last updated: August 14, 2025 at 3:15 PM
+                </p>
+            </div>
+
+            <!-- Blood Type Availability Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
+                <!-- O+ -->
+                <div class="card text-center">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">O+</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-success h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <div class="text-sm text-success font-medium mb-1">Adequate</div>
+                    <div class="text-xs text-text-secondary">18 units</div>
+                </div>
+
+                <!-- O- -->
+                <div class="card text-center border-2 border-error-200">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">O-</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-error h-2 rounded-full" style="width: 15%"></div>
+                    </div>
+                    <div class="text-sm text-error font-medium mb-1">Critical</div>
+                    <div class="text-xs text-text-secondary">2 units</div>
+                </div>
+
+                <!-- A+ -->
+                <div class="card text-center">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">A+</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-warning h-2 rounded-full" style="width: 45%"></div>
+                    </div>
+                    <div class="text-sm text-warning font-medium mb-1">Low</div>
+                    <div class="text-xs text-text-secondary">7 units</div>
+                </div>
+
+                <!-- A- -->
+                <div class="card text-center">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">A-</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-success h-2 rounded-full" style="width: 60%"></div>
+                    </div>
+                    <div class="text-sm text-success font-medium mb-1">Adequate</div>
+                    <div class="text-xs text-text-secondary">12 units</div>
+                </div>
+
+                <!-- B+ -->
+                <div class="card text-center">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">B+</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-success h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                    <div class="text-sm text-success font-medium mb-1">Good</div>
+                    <div class="text-xs text-text-secondary">22 units</div>
+                </div>
+
+                <!-- B- -->
+                <div class="card text-center">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">B-</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-warning h-2 rounded-full" style="width: 35%"></div>
+                    </div>
+                    <div class="text-sm text-warning font-medium mb-1">Low</div>
+                    <div class="text-xs text-text-secondary">5 units</div>
+                </div>
+
+                <!-- AB+ -->
+                <div class="card text-center">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">AB+</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-success h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                    <div class="text-sm text-success font-medium mb-1">Adequate</div>
+                    <div class="text-xs text-text-secondary">14 units</div>
+                </div>
+
+                <!-- AB- -->
+                <div class="card text-center">
+                    <div class="text-2xl font-inter font-bold text-text-primary mb-2">AB-</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-warning h-2 rounded-full" style="width: 40%"></div>
+                    </div>
+                    <div class="text-sm text-warning font-medium mb-1">Low</div>
+                    <div class="text-xs text-text-secondary">6 units</div>
+                </div>
+            </div>
+
+            <!-- Predictive Analytics -->
+            <div class="card mb-8">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-inter font-semibold text-lg text-text-primary">Predictive Analytics</h3>
+                    <span class="text-sm text-text-secondary">Based on 30-day trends</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-warning-100 rounded-full mb-3">
+                            <svg class="h-6 w-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-inter font-semibold text-text-primary mb-1">Expected Shortage</h4>
+                        <p class="text-sm text-text-secondary">O- and A+ types predicted to reach critical levels within 3 days</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-success-100 rounded-full mb-3">
+                            <svg class="h-6 w-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-inter font-semibold text-text-primary mb-1">Stable Supply</h4>
+                        <p class="text-sm text-text-secondary">B+ and AB+ maintaining healthy levels through next week</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full mb-3">
+                            <svg class="h-6 w-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-inter font-semibold text-text-primary mb-1">Donation Drive Impact</h4>
+                        <p class="text-sm text-text-secondary">Upcoming corporate drives expected to boost O+ supply by 40%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map & Location Results -->
+    <section class="py-8 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Map View -->
+                <div>
+                    <h3 class="font-inter font-semibold text-xl text-text-primary mb-4">
+                        Nearby Locations
+                    </h3>
+                    <div class="bg-gray-100 rounded-2xl p-8 h-96 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-secondary-100 to-primary-100 opacity-30"></div>
+                        <div class="relative z-10 text-center h-full flex flex-col justify-center">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary rounded-full mb-4 mx-auto">
+                                <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-inter font-semibold text-lg text-text-primary mb-2">Interactive Map View</h4>
+                            <p class="text-text-secondary mb-4">Real-time locations with traffic updates and directions</p>
+                            
+                            <!-- Map Markers Simulation -->
+                            <div class="flex justify-center space-x-4 mb-4">
+                                <div class="w-3 h-3 bg-success rounded-full animate-pulse-gentle"></div>
+                                <div class="w-3 h-3 bg-warning rounded-full animate-pulse-gentle"></div>
+                                <div class="w-3 h-3 bg-error rounded-full animate-pulse-gentle"></div>
+                                <div class="w-3 h-3 bg-secondary rounded-full animate-pulse-gentle"></div>
+                            </div>
+                            <p class="text-sm text-text-secondary">4 locations found within 10 miles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Cards -->
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-inter font-semibold text-xl text-text-primary">
+                            Available Centers
+                        </h3>
+                        <span class="text-sm text-text-secondary">Sorted by distance</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <!-- Location 1 -->
+                        <div class="card hover:shadow-floating transition-smooth">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-inter font-semibold text-lg text-text-primary mb-1">
+                                        KEM Hospital Blood Centre
+                                    </h4>
+                                    <p class="text-text-secondary text-sm mb-2">
+                                        Acharya Donde Marg, Parel, Mumbai
+                                    </p>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                                        </svg>
+                                        2.3 km away • 8 min drive
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-success-100 text-success mb-1">
+                                        Open Now
+                                    </div>
+                                    <div class="text-sm text-text-secondary">Wait: ~32min</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Blood Type Availability -->
+                            <div class="mb-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-success-100 text-success">
+                                        O+ Available
+                                    </span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-error-100 text-error">
+                                        O- Critical
+                                    </span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-success-100 text-success">
+                                        A+ Available
+                                    </span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-warning-100 text-warning">
+                                        B- Low
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="flex gap-2">
+                                <button class="btn-primary flex-1 text-sm">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                                    </svg>
+                                    Book Appointment
+                                </button>
+                                <button class="btn-secondary text-sm">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                    Directions
+                                </button>
+                                <a href="tel:+912224107000">
+    <button class="p-2 text-text-secondary hover:text-primary rounded-lg border border-gray-300">
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+    </button>
+</a>
+
+                            </div>
+                        </div>
+
+                        <!-- Location 2 -->
+                        <div class="card hover:shadow-floating transition-smooth">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-inter font-semibold text-lg text-text-primary mb-1">
+                                        Bombay Hospital Trust Blood Bank
+                                    </h4>
+                                    <p class="text-text-secondary text-sm mb-2">
+                                        Bombay Hospital, 12-Floor, New Marine Lines, Marine Lines, Mumbai
+                                    </p>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                                        </svg>
+                                        8.7 km away • 22 min drive
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-success-100 text-success mb-1">
+                                        Open Now
+                                    </div>
+                                    <div class="text-sm text-text-secondary">Wait: ~25 min</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Blood Type Availability -->
+                            <div class="mb-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-success-100 text-success">
+                                        All Types Available
+                                    </span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary">
+                                        Platelets Available
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="flex gap-2">
+                                <button class="btn-primary flex-1 text-sm">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                                    </svg>
+                                    Book Appointment
+                                </button>
+                                <button class="btn-secondary text-sm">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                    Directions
+                                </button>
+                               <a href="tel:+91-22-2206-7676">
+    <button class="p-2 text-text-secondary hover:text-primary rounded-lg border border-gray-300">
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+    </button>
+</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View More -->
+                    <div class="text-center mt-6">
+                        <button class="btn-secondary">
+                            View All 12 Locations
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Unit Schedule -->
+    <section class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-inter font-bold text-3xl md:text-4xl text-text-primary mb-4">
+                    Mobile Blood Donation Camps
+                </h2>
+                <p class="text-lg text-text-secondary">
+                    Bringing life-saving donation opportunities closer to your community
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Mobile Unit 1 -->
+                <div class="card">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mobile Blood Donation Unit" class="w-24 h-24 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div class="flex-1">
+                            <h3 class="font-inter font-semibold text-lg text-text-primary mb-2">
+                                Community Hall Blood Drive
+                            </h3>
+                            <div class="space-y-2 text-sm text-text-secondary mb-4">
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                    Bandra Community Hall, Mumbai
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                                    </svg>
+                                    August 27, 2025 • 10:00 AM - 4:00 PM
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    12 appointments available
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full text-sm">
+                                Reserve Your Spot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Unit 2 -->
+                <div class="card">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://images.pixabay.com/photo/2021/10/11/17/54/doctor-6701410_1280.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mobile Blood Donation Unit at Corporate Office" class="w-24 h-24 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div class="flex-1">
+                            <h3 class="font-inter font-semibold text-lg text-text-primary mb-2">
+                                Corporate Blood Donation Camp
+                            </h3>
+                            <div class="space-y-2 text-sm text-text-secondary mb-4">
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                    Infosys Campus – Building A, Pune
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                                    </svg>
+                                    August 29, 2025 • 9:00 AM - 3:00 PM
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    8 appointments available
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full text-sm">
+                                Reserve Your Spot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Preferences -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-inter font-bold text-3xl md:text-4xl text-text-primary mb-4">
+                    Stay Informed
+                </h2>
+                <p class="text-lg text-text-secondary">
+                    Get notified when your blood type is critically needed in your area
+                </p>
+            </div>
+
+            <div class="card max-w-2xl mx-auto">
+                <div class="space-y-6">
+                    <!-- Blood Type Selection -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">
+                            Your Blood Type
+                        </label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">O+</div>
+                            </button>
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">O-</div>
+                            </button>
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">A+</div>
+                            </button>
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">A-</div>
+                            </button>
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">B+</div>
+                            </button>
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">B-</div>
+                            </button>
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">AB+</div>
+                            </button>
+                            <button class="p-3 text-center border border-gray-300 rounded-lg hover:border-primary hover:bg-primary-50 transition-smooth">
+                                <div class="font-inter font-semibold">AB-</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Notification Preferences -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">
+                            Notification Preferences
+                        </label>
+                        <div class="space-y-3">
+                            <label class="flex items-center">
+                                <input type="checkbox" checked class="rounded border-gray-300 text-primary focus:ring-primary-200" />
+                                <span class="ml-3 text-sm text-text-secondary">Critical shortage alerts (immediate need)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" checked class="rounded border-gray-300 text-primary focus:ring-primary-200" />
+                                <span class="ml-3 text-sm text-text-secondary">Low inventory warnings (within 3 days)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary-200" />
+                                <span class="ml-3 text-sm text-text-secondary">Mobile unit schedules in your area</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary-200" />
+                                <span class="ml-3 text-sm text-text-secondary">Weekly inventory reports</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="alert-email" class="block text-sm font-medium text-text-primary mb-2">
+                                Email Address
+                            </label>
+                            <input type="email" id="alert-email" placeholder="your.email@example.com" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                        <div>
+                            <label for="alert-phone" class="block text-sm font-medium text-text-primary mb-2">
+                                Phone Number (Optional)
+                            </label>
+                            <input type="tel" id="alert-phone" placeholder="+91-22-2206-7676" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn-primary w-full">
+                        <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2L3 7v11a1 1 0 001 1h3v-5a1 1 0 011-1h4a1 1 0 011 1v5h3a1 1 0 001-1V7l-7-5z"/>
+                        </svg>
+                        Set Up Alerts
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9ZM12 18C10.34 18 9 16.66 9 15S10.34 12 12 12 15 13.34 15 15 13.66 18 12 18Z"/>
+                        </svg>
+                        <span class="font-inter font-bold text-xl">R-HopeDrop</span>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Uniting compassionate donors with those in need. Every drop is precious, every donor is valued, and every life saved is a shared triumph for our community.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-smooth">
+    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.26 0a1.13 1.13 0 0 1 2.26 0z"/>
+    </svg>
+</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="donor_registration_dashboard.html" class="text-gray-300 hover:text-white transition-smooth">Become a Donor</a></li>
+                        <li><a href="blood_request_center.html" class="text-gray-300 hover:text-white transition-smooth">Request Blood</a></li>
+                        <li><a href="availability_search_inventory.html" class="text-gray-300 hover:text-white transition-smooth">Find Blood</a></li>
+                        <li><a href="resources_education_center.html" class="text-gray-300 hover:text-white transition-smooth">Learn More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact_support.html" class="text-gray-300 hover:text-white transition-smooth">Help Center</a></li>
+                        <li><a href="contact_support.html" class="text-gray-300 hover:text-white transition-smooth">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2025 R-HopeDrop. All Rights Reserved. Saving lives, one drop at a time.</p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

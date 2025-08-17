@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Registration & Dashboard - LifeFlow</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Join LifeFlow's donor community. Complete your registration and track your life-saving impact through our comprehensive donor dashboard." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flifeflow3078back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background font-source-sans">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-subtle sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="h-8 w-8 text-primary mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9ZM12 18C10.34 18 9 16.66 9 15S10.34 12 12 12 15 13.34 15 15 13.66 18 12 18Z"/>
+                        </svg>
+                        <span class="font-inter font-bold text-xl text-text-primary">R-HopeDrop</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="donor_registration_dashboard.html" class="text-primary font-semibold px-3 py-2 rounded-md text-sm">Donate</a>
+                        <a href="blood_request_center.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Request Blood</a>
+                        <a href="availability_search_inventory.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Find Blood</a>
+                        <a href="resources_education_center.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Resources</a>
+                        <a href="contact_support.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Support</a>
+                    </div>
+                </div>
+
+                <!-- Emergency Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="blood_request_center.html" class="bg-primary text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-primary-600 transition-smooth">
+                        Emergency Request
+                    </a>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration/Dashboard Toggle -->
+    <div class="bg-primary-50 border-b border-primary-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-center space-x-4">
+                <button id="registrationTab" class="px-6 py-2 rounded-lg font-semibold text-sm bg-primary text-white">
+                    New Donor Registration
+                </button>
+                <button id="dashboardTab" class="px-6 py-2 rounded-lg font-semibold text-sm text-primary hover:bg-primary-100 transition-smooth">
+                    Donor Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <section id="registrationSection" class="py-12 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Registration Header -->
+            <div class="text-center mb-12">
+                <h1 class="font-inter font-bold text-4xl text-text-primary mb-4">
+                    Join Our Life-Saving Community
+                </h1>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Complete your donor registration in four simple steps and start making a difference today.
+                </p>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="mb-8">
+                <div class="flex items-center justify-center space-x-4">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                        <span class="ml-2 text-sm font-medium text-primary">Eligibility</span>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                        <span class="ml-2 text-sm font-medium text-gray-500">Personal Info</span>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                        <span class="ml-2 text-sm font-medium text-gray-500">Medical History</span>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center text-sm font-semibold">4</div>
+                        <span class="ml-2 text-sm font-medium text-gray-500">Preferences</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 1: Eligibility Screening -->
+            <div id="step1" class="card mb-8">
+                <div class="mb-6">
+                    <h2 class="font-inter font-semibold text-2xl text-text-primary mb-2">
+                        Step 1: Eligibility Screening
+                    </h2>
+                    <p class="text-text-secondary">
+                        Let's check if you're eligible to donate blood. This quick assessment helps ensure your safety and the safety of recipients.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Age & Weight -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Age</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                                <option value>Select your age range</option>
+                                <option value="16-17">16-17 years</option>
+                                <option value="18-65">18-65 years</option>
+                                <option value="66+">66+ years</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Weight (lbs)</label>
+                            <input type="number" placeholder="Enter your weight" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                        </div>
+                    </div>
+
+                    <!-- Health Questions -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-3">Have you donated blood in the last 8 weeks?</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="recent_donation" value="yes" class="text-primary focus:ring-primary-200" />
+                                    <span class="ml-2 text-sm text-text-secondary">Yes</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="recent_donation" value="no" class="text-primary focus:ring-primary-200" />
+                                    <span class="ml-2 text-sm text-text-secondary">No</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-3">Are you currently taking any medications?</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="medications" value="yes" class="text-primary focus:ring-primary-200" />
+                                    <span class="ml-2 text-sm text-text-secondary">Yes</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="medications" value="no" class="text-primary focus:ring-primary-200" />
+                                    <span class="ml-2 text-sm text-text-secondary">No</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eligibility Result -->
+                <div class="mt-6 p-4 bg-success-50 border border-success-100 rounded-lg">
+                    <div class="flex items-center">
+                        <svg class="h-5 w-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                        </svg>
+                        <span class="text-success font-medium">Great! You appear eligible to donate blood.</span>
+                    </div>
+                    <p class="text-sm text-success-600 mt-1">Continue to the next step to complete your registration.</p>
+                </div>
+
+                <div class="flex justify-end mt-6">
+                    <button class="btn-primary" onclick="nextStep(2)">
+                        Continue to Personal Information
+                        <svg class="inline h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Personal Information (Hidden by default) -->
+            <div id="step2" class="card mb-8 hidden">
+                <div class="mb-6">
+                    <h2 class="font-inter font-semibold text-2xl text-text-primary mb-2">
+                        Step 2: Personal Information
+                    </h2>
+                    <p class="text-text-secondary">
+                        Your information is protected with enterprise-grade security and HIPAA compliance.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">First Name *</label>
+                        <input type="text" value="Ruchil" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Last Name *</label>
+                        <input type="text" value="Parkar" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                        <input type="email" value="ruchil@email.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Phone Number *</label>
+                        <input type="tel" value="+91-90-2410-7000" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Date of Birth *</label>
+                        <input type="date" value="2005-06-24" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Blood Type</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary">
+                            <option value>Select if known</option>
+                            <option value="O+" selected>O+</option>
+                            <option value="O-">O-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-sm font-medium text-text-primary mb-2">Address</label>
+                    <input type="text" value="Worli, Mumbai" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                </div>
+
+                <div class="flex justify-between mt-6">
+                    <button class="btn-secondary" onclick="prevStep(1)">
+                        <svg class="inline h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"/>
+                        </svg>
+                        Back
+                    </button>
+                    <button class="btn-primary" onclick="nextStep(3)">
+                        Continue to Medical History
+                        <svg class="inline h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Medical History (Hidden by default) -->
+            <div id="step3" class="card mb-8 hidden">
+                <div class="mb-6">
+                    <h2 class="font-inter font-semibold text-2xl text-text-primary mb-2">
+                        Step 3: Medical History
+                    </h2>
+                    <p class="text-text-secondary">
+                        This information helps ensure the safety of both donors and recipients. All data is HIPAA-compliant and secure.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">Have you ever had any of the following conditions?</label>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Heart disease</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Diabetes</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">High blood pressure</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Cancer</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">Have you traveled outside the India in the past 3 years?</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="travel" value="yes" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Yes</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="travel" value="no" class="text-primary focus:ring-primary-200" checked />
+                                <span class="ml-2 text-sm text-text-secondary">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Emergency Contact Name</label>
+                        <input type="text" value="Sanjay Parkar" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Emergency Contact Phone</label>
+                        <input type="tel" value="+91-88-2410-7000" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary" />
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-6">
+                    <button class="btn-secondary" onclick="prevStep(2)">
+                        <svg class="inline h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"/>
+                        </svg>
+                        Back
+                    </button>
+                    <button class="btn-primary" onclick="nextStep(4)">
+                        Continue to Preferences
+                        <svg class="inline h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Preferences (Hidden by default) -->
+            <div id="step4" class="card mb-8 hidden">
+                <div class="mb-6">
+                    <h2 class="font-inter font-semibold text-2xl text-text-primary mb-2">
+                        Step 4: Preferences & Notifications
+                    </h2>
+                    <p class="text-text-secondary">
+                        Customize your donation experience and communication preferences.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">Preferred Donation Times</label>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" checked />
+                                <span class="ml-2 text-sm text-text-secondary">Morning (8AM-12PM)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Afternoon (12PM-5PM)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Evening (5PM-8PM)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">Notification Preferences</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" checked />
+                                <span class="ml-2 text-sm text-text-secondary">Donation eligibility reminders</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" checked />
+                                <span class="ml-2 text-sm text-text-secondary">Emergency blood shortage alerts</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Community impact updates</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Achievement and milestone notifications</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">Preferred Contact Method</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="contact_method" value="email" class="text-primary focus:ring-primary-200" checked />
+                                <span class="ml-2 text-sm text-text-secondary">Email</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="contact_method" value="sms" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Text Message</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="contact_method" value="phone" class="text-primary focus:ring-primary-200" />
+                                <span class="ml-2 text-sm text-text-secondary">Phone Call</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-6">
+                    <button class="btn-secondary" onclick="prevStep(3)">
+                        <svg class="inline h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"/>
+                        </svg>
+                        Back
+                    </button>
+                    <button class="btn-primary" onclick="completeRegistration()">
+                        Complete Registration
+                        <svg class="inline h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section (Hidden by default) -->
+    <section id="dashboardSection" class="py-12 bg-background hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Welcome Header -->
+            <div class="mb-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="font-inter font-bold text-3xl text-text-primary mb-2">
+                            Welcome back, Ruchil! 👋
+                        </h1>
+                        <p class="text-text-secondary">Your next donation eligibility: <span class="font-semibold text-primary">November 20, 2025</span></p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold text-primary">39 </div>
+                        <div class="text-sm text-text-secondary">Days until next donation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Summary Cards -->
+            <div class="grid md:grid-cols-4 gap-6 mb-8">
+                <div class="card text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-primary-100 rounded-full mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                        </svg>
+                    </div>
+                    <div class="font-inter font-bold text-2xl text-primary mb-1">69</div>
+                    <div class="text-sm text-text-secondary">Lives Touched</div>
+                </div>
+                <div class="card text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full mb-4">
+                        <svg class="h-6 w-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="font-inter font-bold text-2xl text-secondary mb-1">23</div>
+                    <div class="text-sm text-text-secondary">Total Donations</div>
+                </div>
+                <div class="card text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-accent-100 rounded-full mb-4">
+                        <svg class="h-6 w-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <div class="font-inter font-bold text-2xl text-accent-600 mb-1">15</div>
+                    <div class="text-sm text-text-secondary">Donation Streak</div>
+                </div>
+                <div class="card text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-success-100 rounded-full mb-4">
+                        <svg class="h-6 w-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                        </svg>
+                    </div>
+                    <div class="font-inter font-bold text-2xl text-success mb-1">Gold</div>
+                    <div class="text-sm text-text-secondary">Lifesaver Status</div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Content -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Left Column -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Next Donation Countdown -->
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="font-inter font-semibold text-xl text-text-primary">Next Donation Countdown</h2>
+                            <div class="text-sm text-text-secondary">O+ Blood Type</div>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="inline-flex items-center justify-center w-24 h-24 bg-primary-100 rounded-full mb-4">
+                                <div class="text-center">
+                                    <div class="font-inter font-bold text-2xl text-primary">39</div>
+                                    <div class="text-xs text-primary">DAYS</div>
+                                </div>
+                            </div>
+                            <p class="text-text-secondary">You'll be eligible to donate again on <span class="font-semibold">March 15, 2025</span></p>
+                        </div>
+
+                        <div class="bg-primary-50 rounded-lg p-4 mb-4">
+                            <h3 class="font-semibold text-text-primary mb-2">Preparation Tips</h3>
+                            <ul class="text-sm text-text-secondary space-y-1">
+                                <li>• Stay hydrated - drink plenty of water</li>
+                                <li>• Eat iron-rich foods like spinach and red meat</li>
+                                <li>• Get adequate sleep (7-8 hours)</li>
+                                <li>• Avoid alcohol 24 hours before donation</li>
+                            </ul>
+                        </div>
+
+                        <button class="btn-primary w-full">
+                            Schedule Next Appointment
+                        </button>
+                    </div>
+
+                    <!-- Appointment History -->
+                    <div class="card">
+                        <h2 class="font-inter font-semibold text-xl text-text-primary mb-6">Recent Donation History</h2>
+                        
+                        <div class="space-y-4">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-semibold text-text-primary">December 18, 2024</div>
+                                    <div class="text-sm text-success bg-success-50 px-2 py-1 rounded">Completed</div>
+                                </div>
+                                <div class="text-sm text-text-secondary mb-3">
+                                    Kokilaben Dhirubhai Ambani Hospital • O+ Whole Blood • 450ml
+                                </div>
+                                <div class="bg-accent-50 border border-accent-200 rounded-lg p-3">
+                                    <div class="flex items-start">
+                                        <svg class="h-4 w-4 text-accent-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <div>
+                                            <div class="text-sm font-medium text-accent-800">Thank you message from recipient:</div>
+                                            <div class="text-sm text-accent-700 italic">"Your donation helped save my daughter during her surgery. We are forever grateful for your generosity."</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-semibold text-text-primary">October 12, 2024</div>
+                                    <div class="text-sm text-success bg-success-50 px-2 py-1 rounded">Completed</div>
+                                </div>
+                                <div class="text-sm text-text-secondary mb-3">
+                                    Nanavati Max Super Speciality Hospital • O+ Whole Blood • 450ml
+                                </div>
+                                <div class="bg-secondary-50 border border-secondary-200 rounded-lg p-3">
+                                    <div class="flex items-center">
+                                        <svg class="h-4 w-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/>
+                                        </svg>
+                                        <div class="text-sm text-secondary-700">Used for emergency surgery at South India Hub</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-600 text-sm font-medium">
+                                View Complete History →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="space-y-8">
+                    <!-- Quick Actions -->
+                    <div class="card">
+                        <h2 class="font-inter font-semibold text-xl text-text-primary mb-6">Quick Actions</h2>
+                        
+                        <div class="space-y-3">
+                            <button class="w-full flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-smooth">
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                                    </svg>
+                                    <span class="font-medium text-text-primary">Schedule Appointment</span>
+                                </div>
+                                <svg class="h-4 w-4 text-text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+
+                            <button class="w-full flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-smooth">
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2v8h12V6H4z"/>
+                                    </svg>
+                                    <span class="font-medium text-text-primary">Update Health Info</span>
+                                </div>
+                                <svg class="h-4 w-4 text-text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+
+                            <button class="w-full flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-smooth">
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-accent-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                                    </svg>
+                                    <span class="font-medium text-text-primary">Refer a Friend</span>
+                                </div>
+                                <svg class="h-4 w-4 text-text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Wall -->
+                    <div class="card">
+                        <h2 class="font-inter font-semibold text-xl text-text-primary mb-6">Achievement Wall</h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center p-3 bg-accent-50 border border-accent-200 rounded-lg">
+                                <div class="w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-accent-800">Gold Lifesaver</div>
+                                    <div class="text-sm text-accent-700">20+ donations completed</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center p-3 bg-primary-50 border border-primary-200 rounded-lg">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                                    <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-primary">Streak Master</div>
+                                    <div class="text-sm text-primary-700">15 consecutive donations</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center p-3 bg-secondary-50 border border-secondary-200 rounded-lg">
+                                <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center mr-3">
+                                    <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-secondary">Community Hero</div>
+                                    <div class="text-sm text-secondary-700">Referred 5+ new donors</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-600 text-sm font-medium">
+                                View All Achievements →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Community Leaderboard -->
+                    <div class="card">
+                        <h2 class="font-inter font-semibold text-xl text-text-primary mb-6">Community Leaderboard</h2>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-2 bg-accent-50 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 bg-accent-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</div>
+                                    <span class="font-medium text-text-primary">You (Ruchil P.)</span>
+                                </div>
+                                <span class="text-sm font-semibold text-accent-700">23 donations</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 bg-gray-400 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">2</div>
+                                    <span class="text-text-secondary">Siddhart R.</span>
+                                </div>
+                                <span class="text-sm text-text-secondary">21 donations</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 bg-gray-400 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">3</div>
+                                    <span class="text-text-secondary">Zara L.</span>
+                                </div>
+                                <span class="text-sm text-text-secondary">19 donations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9ZM12 18C10.34 18 9 16.66 9 15S10.34 12 12 12 15 13.34 15 15 13.66 18 12 18Z"/>
+                        </svg>
+                        <span class="font-inter font-bold text-xl">R-HopeDrop</span>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Uniting compassionate donors with those in need. Every drop is precious, every donor is valued, and every life saved is a shared triumph for our community.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-smooth">
+    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.26 0a1.13 1.13 0 0 1 2.26 0z"/>
+    </svg>
+</a>
+
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="donor_registration_dashboard.html" class="text-gray-300 hover:text-white transition-smooth">Become a Donor</a></li>
+                        <li><a href="blood_request_center.html" class="text-gray-300 hover:text-white transition-smooth">Request Blood</a></li>
+                        <li><a href="availability_search_inventory.html" class="text-gray-300 hover:text-white transition-smooth">Find Blood</a></li>
+                        <li><a href="resources_education_center.html" class="text-gray-300 hover:text-white transition-smooth">Learn More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact_support.html" class="text-gray-300 hover:text-white transition-smooth">Help Center</a></li>
+                        <li><a href="contact_support.html" class="text-gray-300 hover:text-white transition-smooth">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-smooth">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2025 R-HopeDrop. All Rights Reserved. Saving lives, one drop at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        const registrationTab = document.getElementById('registrationTab');
+        const dashboardTab = document.getElementById('dashboardTab');
+        const registrationSection = document.getElementById('registrationSection');
+        const dashboardSection = document.getElementById('dashboardSection');
+
+        registrationTab.addEventListener('click', function() {
+            registrationTab.classList.add('bg-primary', 'text-white');
+            registrationTab.classList.remove('text-primary', 'hover:bg-primary-100');
+            dashboardTab.classList.remove('bg-primary', 'text-white');
+            dashboardTab.classList.add('text-primary', 'hover:bg-primary-100');
+            
+            registrationSection.classList.remove('hidden');
+            dashboardSection.classList.add('hidden');
+        });
+
+        dashboardTab.addEventListener('click', function() {
+            dashboardTab.classList.add('bg-primary', 'text-white');
+            dashboardTab.classList.remove('text-primary', 'hover:bg-primary-100');
+            registrationTab.classList.remove('bg-primary', 'text-white');
+            registrationTab.classList.add('text-primary', 'hover:bg-primary-100');
+            
+            dashboardSection.classList.remove('hidden');
+            registrationSection.classList.add('hidden');
+        });
+
+        // Multi-step form functionality
+        function nextStep(stepNumber) {
+            // Hide all steps
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('step' + i).classList.add('hidden');
+            }
+            
+            // Show target step
+            document.getElementById('step' + stepNumber).classList.remove('hidden');
+            
+            // Update progress indicator
+            updateProgressIndicator(stepNumber);
+        }
+
+        function prevStep(stepNumber) {
+            nextStep(stepNumber);
+        }
+
+        function updateProgressIndicator(currentStep) {
+            for (let i = 1; i <= 4; i++) {
+                const stepElement = document.querySelector(`.flex:nth-child(${i * 2 - 1})`);
+                const circle = stepElement.querySelector('.w-8');
+                const text = stepElement.querySelector('span');
+                const connector = document.querySelector(`.flex:nth-child(${i * 2})`);
+                
+                if (i <= currentStep) {
+                    circle.classList.remove('bg-gray-200', 'text-gray-500');
+                    circle.classList.add('bg-primary', 'text-white');
+                    text.classList.remove('text-gray-500');
+                    text.classList.add('text-primary');
+                    
+                    if (connector && i < currentStep) {
+                        connector.querySelector('.w-16').classList.remove('bg-gray-200');
+                        connector.querySelector('.w-16').classList.add('bg-primary');
+                    }
+                } else {
+                    circle.classList.add('bg-gray-200', 'text-gray-500');
+                    circle.classList.remove('bg-primary', 'text-white');
+                    text.classList.add('text-gray-500');
+                    text.classList.remove('text-primary');
+                    
+                    if (connector) {
+                        connector.querySelector('.w-16').classList.add('bg-gray-200');
+                        connector.querySelector('.w-16').classList.remove('bg-primary');
+                    }
+                }
+            }
+        }
+
+        function completeRegistration() {
+            alert('Registration completed successfully! Welcome to the LifeFlow community. You can now access your donor dashboard.');
+            // Switch to dashboard view
+            dashboardTab.click();
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
