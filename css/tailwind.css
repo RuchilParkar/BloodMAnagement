@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors - Life Current Theme */
+  --color-primary: #C41E3A; /* crimson - Life force urgency */
+  --color-primary-50: #FDF2F4; /* crimson-50 */
+  --color-primary-100: #FCE7EA; /* crimson-100 */
+  --color-primary-200: #F8CDD3; /* crimson-200 */
+  --color-primary-300: #F2A4B0; /* crimson-300 */
+  --color-primary-400: #E97B8D; /* crimson-400 */
+  --color-primary-500: #C41E3A; /* crimson-500 */
+  --color-primary-600: #A61B31; /* crimson-600 */
+  --color-primary-700: #8B1729; /* crimson-700 */
+  --color-primary-800: #721421; /* crimson-800 */
+  --color-primary-900: #5F121C; /* crimson-900 */
+
+  /* Secondary Colors - Medical Trust */
+  --color-secondary: #4A90E2; /* blue - Medical trust and calm guidance */
+  --color-secondary-50: #F0F7FF; /* blue-50 */
+  --color-secondary-100: #E0EFFF; /* blue-100 */
+  --color-secondary-200: #BAD9FF; /* blue-200 */
+  --color-secondary-300: #7CBEFF; /* blue-300 */
+  --color-secondary-400: #4A90E2; /* blue-400 */
+  --color-secondary-500: #3B82F6; /* blue-500 */
+  --color-secondary-600: #2563EB; /* blue-600 */
+  --color-secondary-700: #1D4ED8; /* blue-700 */
+  --color-secondary-800: #1E40AF; /* blue-800 */
+  --color-secondary-900: #1E3A8A; /* blue-900 */
+
+  /* Accent Colors */
+  --color-accent: #FFD700; /* gold - Achievement celebration */
+  --color-accent-50: #FFFEF0; /* gold-50 */
+  --color-accent-100: #FFFCE0; /* gold-100 */
+  --color-accent-200: #FFF9C2; /* gold-200 */
+  --color-accent-300: #FFF388; /* gold-300 */
+  --color-accent-400: #FFED4E; /* gold-400 */
+  --color-accent-500: #FFD700; /* gold-500 */
+  --color-accent-600: #D4AF37; /* gold-600 */
+  --color-accent-700: #B8860B; /* gold-700 */
+  --color-accent-800: #9A7B0A; /* gold-800 */
+  --color-accent-900: #7D6608; /* gold-900 */
+
+  /* Background Colors */
+  --color-background: #FAFAFA; /* gray-50 - Clean medical environment */
+  --color-surface: #FFFFFF; /* white - Content cards and forms */
+
+  /* Text Colors */
+  --color-text-primary: #2C3E50; /* slate-800 - Extended reading */
+  --color-text-secondary: #7F8C8D; /* gray-500 - Information hierarchy */
+
+  /* Status Colors */
+  --color-success: #27AE60; /* green-600 - Positive confirmation */
+  --color-success-50: #F0FDF4; /* green-50 */
+  --color-success-100: #DCFCE7; /* green-100 */
+  --color-success-500: #27AE60; /* green-500 */
+
+  --color-warning: #F39C12; /* orange-500 - Important alerts */
+  --color-warning-50: #FFFBEB; /* orange-50 */
+  --color-warning-100: #FEF3C7; /* orange-100 */
+  --color-warning-500: #F39C12; /* orange-500 */
+
+  --color-error: #E74C3C; /* red-500 - Problem identification */
+  --color-error-50: #FEF2F2; /* red-50 */
+  --color-error-100: #FEE2E2; /* red-100 */
+  --color-error-500: #E74C3C; /* red-500 */
+
+  /* Neutral Colors */
+  --color-gray-50: #F9FAFB; /* gray-50 */
+  --color-gray-100: #F3F4F6; /* gray-100 */
+  --color-gray-200: #E5E7EB; /* gray-200 */
+  --color-gray-300: #D1D5DB; /* gray-300 */
+  --color-gray-400: #9CA3AF; /* gray-400 */
+  --color-gray-500: #6B7280; /* gray-500 */
+  --color-gray-600: #4B5563; /* gray-600 */
+  --color-gray-700: #374151; /* gray-700 */
+  --color-gray-800: #1F2937; /* gray-800 */
+  --color-gray-900: #111827; /* gray-900 */
+}
+
+@layer base {
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-250 ease-out hover:bg-primary-600 focus:ring-2 focus:ring-primary-200 focus:outline-none;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-secondary border border-secondary font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-250 ease-out hover:bg-secondary-50 focus:ring-2 focus:ring-secondary-200 focus:outline-none;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg shadow-subtle p-6;
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .transition-smooth {
+    transition: all 250ms ease-out;
+  }
+
+  .transition-page {
+    transition: all 400ms ease-out;
+  }
+}
